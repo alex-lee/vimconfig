@@ -10,6 +10,7 @@ set tw=72
 nnoremap <leader>q gqap
 set nojoinspaces
 inoremap jj <Esc>
+set nofoldenable
 
 " Pathogen load
 filetype off
@@ -26,7 +27,9 @@ let g:pymode_rope_lookup_project = 1
 let g:pymode_rope_show_doc_bind = '<leader>d'
 let g:pymode_rope_goto_definition_bind = '<leader>g'
 
-set nofoldenable
+" Appearance
+set background=dark
+colorscheme solarized
 ```
 	
 Currently installed packages:
