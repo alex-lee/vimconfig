@@ -10,6 +10,7 @@ git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/klen/python-mode.git
 git clone https://github.com/fatih/vim-go.git
+git clone https://github.com/sukima/xmledit.git
 ```
 
 Previously installed packages:

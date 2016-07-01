@@ -50,6 +50,9 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" File browser (netrw)
+let g:netrw_list_hide='.*\.swp,.*\.pyc'
+
 " Appearance
 set number
 set background=dark
@@ -60,6 +63,8 @@ set laststatus=2
 " Custom search commands:
 " search all python source files
 command -nargs=1 P vimgrep !<args>! **/*.py | copen
+" search all go source files
+command -nargs=1 GG vimgrep !<args>! **/*.go | copen
 " search everything
 command -nargs=1 G vimgrep !<args>! **/* | copen
 
@@ -68,6 +73,7 @@ command -nargs=1 G vimgrep !<args>! **/* | copen
 let mapleader = ","
 " reformat the paragraph
 nnoremap <leader>q gqap
+nnoremap Q gqap
 " easier than hitting escape
 inoremap jj <Esc>
 " close the buffer, but don't close the window (instead load previous)
