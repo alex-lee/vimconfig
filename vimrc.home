@@ -6,6 +6,7 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 set hlsearch		" Highlight matches
 set mouse=a			" Enable mouse usage (all modes)
+set scrolloff=4		" Show some context at top and bottom of window
 set autoindent
 set tabstop=4
 set shiftwidth=4
