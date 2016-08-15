@@ -4,6 +4,7 @@ set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
+set hlsearch		" Highlight matches
 set mouse=a			" Enable mouse usage (all modes)
 set autoindent
 set tabstop=4
