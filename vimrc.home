@@ -40,7 +40,12 @@ let g:vim_markdown_folding_disabled = 1
 " gd by default = go-def
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>ta <Plug>(go-test)
+au FileType go nmap <leader>tf <Plug>(go-test-func)
+au FileType go nmap <leader>ae <Plug>(go-alternate-edit)
+au FileType go nmap <leader>as <Plug>(go-alternate-split)
+au FileType go nmap <leader>av <Plug>(go-alternate-vertical)
+au FileType go nmap <leader>v <Plug>(go-vet)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
@@ -48,12 +53,26 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>gi <Plug>(go-imports)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+"let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" Quickfix
+map <C-n> :cnext<CR>
+map <C-p> :cprevious<CR>
 
 " File browser (netrw)
 let g:netrw_list_hide='.*\.swp,.*\.pyc'
@@ -66,6 +85,9 @@ set statusline=%<%F%h%m%r\ %=%l,%c%V\ %P
 set laststatus=2
 
 " Custom search commands:
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 " search all python source files
 command -nargs=1 P vimgrep !<args>! **/*.py | copen
 " search all go source files
