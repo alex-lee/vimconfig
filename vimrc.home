@@ -68,6 +68,11 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+" Neocomplete
+inoremap <expr><C-l> neocomplete#complete_common_string()
+au FileType go nmap <leader>ne :NeoCompleteEnable<CR>
+au FileType go nmap <leader>nd :NeoCompleteDisable<CR>
+
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
