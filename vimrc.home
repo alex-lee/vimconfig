@@ -27,7 +27,7 @@ syntax on
 " Pymode settings
 let g:pymode_options_max_line_length = 100
 let g:pymode_folding = 0
-let g:pymode_lint = 0
+let g:pymode_lint_on_write = 0
 let g:pymode_rope_lookup_project = 1
 let g:pymode_rope_show_doc_bind = '<leader>gd'
 let g:pymode_rope_goto_definition_bind = 'gd'
@@ -46,6 +46,7 @@ au FileType go nmap <leader>ae <Plug>(go-alternate-edit)
 au FileType go nmap <leader>as <Plug>(go-alternate-split)
 au FileType go nmap <leader>av <Plug>(go-alternate-vertical)
 au FileType go nmap <leader>v <Plug>(go-vet)
+au FileType go nmap <leader>l <Plug>(go-metalinter)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
