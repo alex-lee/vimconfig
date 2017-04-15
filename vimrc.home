@@ -1,5 +1,19 @@
 " vim: set expandtab:
 
+" Before anything else, enable pathogen (vim extension manager).
+filetype off
+execute pathogen#infect()
+execute pathogen#helptags()
+filetype plugin indent on
+syntax on
+
+" Appearance
+set number
+set background=dark
+colorscheme solarized
+set statusline=%<%F%h%m%r\ %=%l,%c%V\ %P
+set laststatus=2
+
 " Behavior
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
@@ -17,12 +31,36 @@ set nojoinspaces
 set nofoldenable
 set modeline        " Enable modeline for per-file vim settings
 
-" Pathogen load
-filetype off
-execute pathogen#infect()
-execute pathogen#helptags()
-filetype plugin indent on
-syntax on
+" Custom leader
+let mapleader = ","
+
+" File browser (netrw)
+let g:netrw_list_hide='.*\.swp,.*\.pyc'
+
+" Quickfix navigation
+nmap <C-n> :cnext<CR>
+nmap <C-p> :cprevious<CR>
+nmap <C-Down> :lnext<CR>
+nmap <C-Up> :lprevious<CR>
+
+" Use ag (silversearcher) with Ack.
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Custom mappings:
+" reformat the paragraph
+nnoremap <leader>q gqap
+nnoremap Q gqap
+" easier than hitting escape
+inoremap jj <Esc>
+" close the buffer, but don't close the window (instead load previous)
+command BD bp|bd #
+
+" Syntastic settings
+nmap <leader>l :SyntasticCheck<CR>
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_mode_map = {"mode": "passive"} " only run manually
 
 " Pymode settings
 let g:pymode_options_max_line_length = 100
@@ -32,6 +70,9 @@ let g:pymode_rope_lookup_project = 1
 let g:pymode_rope_show_doc_bind = '<leader>gd'
 let g:pymode_rope_goto_definition_bind = 'gd'
 let g:pymode_rope_complete_on_dot = 0       " activate manually with <Ctrl-Space> instead
+let g:syntastic_python_checkers = ['python', 'mypy']
+let g:syntastic_python_mypy_args = '--ignore-missing-imports'
+au FileType python nmap <leader>l :PymodeLint<CR>
 
 " Markdown (plasticboy) settings
 let g:vim_markdown_folding_disabled = 1
@@ -60,7 +101,6 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 "let g:go_auto_sameids = 1
 "let g:go_auto_type_info = 1
-
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -75,39 +115,3 @@ au FileType go nmap <leader>nd :NeoCompleteDisable<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-
-" Quickfix
-map <C-n> :cnext<CR>
-map <C-p> :cprevious<CR>
-
-" File browser (netrw)
-let g:netrw_list_hide='.*\.swp,.*\.pyc'
-
-" Appearance
-set number
-set background=dark
-colorscheme solarized
-set statusline=%<%F%h%m%r\ %=%l,%c%V\ %P
-set laststatus=2
-
-" Custom search commands:
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-" search all python source files
-command -nargs=1 P vimgrep !<args>! **/*.py | copen
-" search all go source files
-command -nargs=1 GG vimgrep !<args>! **/*.go | copen
-" search everything
-command -nargs=1 G vimgrep !<args>! **/* | copen
-
-" Custom mappings:
-" set custom leader
-let mapleader = ","
-" reformat the paragraph
-nnoremap <leader>q gqap
-nnoremap Q gqap
-" easier than hitting escape
-inoremap jj <Esc>
-" close the buffer, but don't close the window (instead load previous)
-command BD bp|bd #
