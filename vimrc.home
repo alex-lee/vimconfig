@@ -62,6 +62,9 @@ nmap <leader>l :SyntasticCheck<CR>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_mode_map = {"mode": "passive"} " only run manually
 
+" Clear signs (e.g. linter marks from syntastic, pymode, etc.)
+nmap <leader>L :sign unplace *<CR>
+
 " Pymode settings
 let g:pymode_options_max_line_length = 100
 let g:pymode_folding = 0
@@ -89,16 +92,16 @@ au FileType go nmap <leader>av <Plug>(go-alternate-vertical)
 au FileType go nmap <leader>v <Plug>(go-vet)
 au FileType go nmap <leader>l <Plug>(go-metalinter)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>gi <Plug>(go-imports)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <leader>ds <Plug>(go-def-split)
+au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <leader>dt <Plug>(go-def-tab)
+au FileType go nmap <leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>gi <Plug>(go-imports)
+au FileType go nmap <leader>s <Plug>(go-implements)
+au FileType go nmap <leader>i <Plug>(go-info)
+au FileType go nmap <leader>e <Plug>(go-rename)
 "let g:go_auto_sameids = 1
 "let g:go_auto_type_info = 1
 let g:go_highlight_functions = 1
