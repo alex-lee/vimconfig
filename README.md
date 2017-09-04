@@ -15,6 +15,20 @@ sudo apt update
 sudo apt install vim
 ```
 
+## Autocompletion
+
+I'm now trying out
+[YouCompleteMe](https://github.com/Valloric/YouCompleteMe). For my needs
+the only additional support that I enable is for Go.
+```
+sudo apt install build-essential cmake  # build dependencies
+cd ~/.vim/bundle
+git clone https://github.com/Valloric/YouCompleteMe.git
+cd YouCompleteMe
+git submodule update --init --recursive
+python3.5 ./install.py --gocode-completer  # force use of system python3
+```
+
 ## Packages
 
 Clone whichever ones you want into `~/.vim/bundle`.
@@ -25,9 +39,9 @@ git clone git://github.com/altercation/vim-colors-solarized.git
 # Helpful tools.
 git clone https://github.com/mileszs/ack.vim.git
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
-git clone https://github.com/Shougo/neocomplete.vim.git
 git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/tpope/vim-fugitive.git
+git clone https://github.com/editorconfig/editorconfig-vim.git
 
 # Python.
 git clone https://github.com/klen/python-mode.git
