@@ -47,7 +47,7 @@ git clone https://github.com/editorconfig/editorconfig-vim.git
 git clone https://github.com/klen/python-mode.git
 
 # Go.
-git clone https://github.com/fatih/vim-go.git
+# See instead: https://github.com/alex-lee/neovimconfig
 
 # Typescript.
 git clone https://github.com/leafgarland/typescript-vim.git
