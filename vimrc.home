@@ -57,6 +57,14 @@ inoremap jj <Esc>
 " close the buffer, but don't close the window (instead load previous)
 command BD bp|bd #
 
+" Improved window splitting and navigation.
+set splitbelow
+set splitright
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+
 " Syntastic settings
 nmap <leader>l :SyntasticCheck<CR>
 let g:syntastic_always_populate_loc_list = 1
