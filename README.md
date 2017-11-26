@@ -33,6 +33,9 @@ python3.5 ./install.py --gocode-completer  # force use of system python3
 
 Clone whichever ones you want into `~/.vim/bundle`.
 ```
+# tmux integration and easier window navigation
+git clone git@github.com:christoomey/vim-tmux-navigator.git
+
 # Nice colors.
 git clone git://github.com/altercation/vim-colors-solarized.git
 
