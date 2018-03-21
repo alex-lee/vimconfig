@@ -41,8 +41,6 @@ nnoremap <leader>E :Explore<CR>
 " Quickfix navigation
 nmap <C-n> :cnext<CR>
 nmap <C-p> :cprevious<CR>
-nmap <C-Down> :lnext<CR>
-nmap <C-Up> :lprevious<CR>
 
 " Use ag (silversearcher) with Ack.
 if executable('ag')
@@ -66,7 +64,10 @@ set splitright
 " Syntastic settings
 nmap <leader>l :SyntasticCheck<CR>
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_mode_map = {"mode": "passive"} " only run manually
+let g:syntastic_python_checkers = ['python', 'flake8', 'mypy']
+let g:syntastic_python_mypy_args = '--ignore-missing-imports'
 
 " Clear signs (e.g. linter marks from syntastic, pymode, etc.)
 nmap <leader>L :sign unplace *<CR>
@@ -81,9 +82,6 @@ let g:pymode_rope_lookup_project = 1
 let g:pymode_rope_show_doc_bind = '<leader>gd'
 let g:pymode_rope_goto_definition_bind = 'gd'
 let g:pymode_rope_complete_on_dot = 0       " activate manually with <Ctrl-Space> instead
-let g:syntastic_python_checkers = ['python', 'mypy']
-let g:syntastic_python_mypy_args = '--ignore-missing-imports'
-au FileType python nmap <leader>l :PymodeLint<CR>
 
 " Markdown (plasticboy) settings
 let g:vim_markdown_folding_disabled = 1

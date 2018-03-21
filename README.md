@@ -29,6 +29,13 @@ git submodule update --init --recursive
 python3.5 ./install.py --gocode-completer  # force use of system python3
 ```
 
+## Python support
+
+For simple linting I use `flake8`, via Syntastic.
+```
+pip3 install --user flake8
+```
+
 ## Packages
 
 Clone whichever ones you want into `~/.vim/bundle`.
@@ -44,6 +51,7 @@ git clone https://github.com/mileszs/ack.vim.git
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/tpope/vim-fugitive.git
+git clone https://github.com/tpope/vim-unimpaired.git
 git clone https://github.com/editorconfig/editorconfig-vim.git
 
 # Python.
