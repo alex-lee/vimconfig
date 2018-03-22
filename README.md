@@ -17,9 +17,8 @@ sudo apt install vim
 
 ## Autocompletion
 
-I'm now trying out
-[YouCompleteMe](https://github.com/Valloric/YouCompleteMe). For my needs
-the only additional support that I enable is for Go.
+You could try
+[YouCompleteMe](https://github.com/Valloric/YouCompleteMe).
 ```
 sudo apt install build-essential cmake  # build dependencies
 cd ~/.vim/bundle
@@ -35,6 +34,12 @@ For simple linting I use `flake8`, via Syntastic.
 ```
 pip3 install --user flake8
 ```
+Example config:
+```
+$ cat ~/.config/flake8
+[flake8]
+max_line_length = 100
+````
 
 ## Packages
 
