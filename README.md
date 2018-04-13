@@ -39,7 +39,9 @@ Example config:
 $ cat ~/.config/flake8
 [flake8]
 max_line_length = 100
-````
+```
+
+[mypy](http://mypy.readthedocs.io/en/latest/index.html) is also useful.
 
 ## Packages
 
@@ -54,13 +56,15 @@ git clone git://github.com/altercation/vim-colors-solarized.git
 # Helpful tools.
 git clone https://github.com/mileszs/ack.vim.git
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+git clone https://github.com/tpope/vim-unimpaired.git
+
+# Additional tools.
 git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/tpope/vim-fugitive.git
-git clone https://github.com/tpope/vim-unimpaired.git
 git clone https://github.com/editorconfig/editorconfig-vim.git
 
 # Python.
-git clone https://github.com/klen/python-mode.git
+git clone --recursive https://github.com/davidhalter/jedi-vim.git
 
 # Go.
 # See instead: https://github.com/alex-lee/neovimconfig
