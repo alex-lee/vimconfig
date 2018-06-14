@@ -8,6 +8,9 @@ ln -s ~/.vim/vimrc.home ~/.vimrc
 
 ## Installing Vim 8
 
+*This config now expects vim 8. For older versions you can still use
+pathogen.vim for plugin management, if you'd like.*
+
 Instructions for Ubuntu 16.04:
 ```
 sudo add-apt-repository ppa:jonathonf/vim
@@ -45,7 +48,7 @@ max_line_length = 100
 
 ## Packages
 
-Clone whichever ones you want into `~/.vim/bundle`.
+Clone whichever ones you want into `~/.vim/pack/plugins/start`.
 ```
 # tmux integration and easier window navigation
 git clone git@github.com:christoomey/vim-tmux-navigator.git
@@ -65,6 +68,7 @@ git clone https://github.com/editorconfig/editorconfig-vim.git
 
 # Python.
 git clone --recursive https://github.com/davidhalter/jedi-vim.git
+git clone https://github.com/Vimjas/vim-python-pep8-indent.git
 
 # Go.
 # See instead: https://github.com/alex-lee/neovimconfig
