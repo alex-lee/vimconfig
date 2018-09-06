@@ -63,9 +63,9 @@ set splitright
 nmap <leader>l :SyntasticCheck<CR>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_auto_jump = 3
+let g:syntastic_auto_jump = 1
 let g:syntastic_mode_map = {"mode": "passive"} " only run manually
-let g:syntastic_python_checkers = ['python', 'flake8', 'mypy']
+let g:syntastic_python_checkers = ['python', 'flake8', 'mypy', 'pylint']
 let g:syntastic_python_mypy_args = '--ignore-missing-imports'
 
 " Clear signs (e.g. linter marks from syntastic, pymode, etc.)
@@ -76,3 +76,9 @@ let g:vim_markdown_folding_disabled = 1
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" Java
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+" Python
+autocmd FileType python setlocal completeopt-=preview
