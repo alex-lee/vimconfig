@@ -18,19 +18,6 @@ sudo apt update
 sudo apt install vim
 ```
 
-## Autocompletion
-
-You could try
-[YouCompleteMe](https://github.com/Valloric/YouCompleteMe).
-```
-sudo apt install build-essential cmake  # build dependencies
-cd ~/.vim/bundle
-git clone https://github.com/Valloric/YouCompleteMe.git
-cd YouCompleteMe
-git submodule update --init --recursive
-python3.5 ./install.py --gocode-completer  # force use of system python3
-```
-
 ## Python support
 
 For simple linting I use `flake8`, via Syntastic.
@@ -71,7 +58,7 @@ git clone --recursive https://github.com/davidhalter/jedi-vim.git
 git clone https://github.com/Vimjas/vim-python-pep8-indent.git
 
 # Go.
-# See instead: https://github.com/alex-lee/neovimconfig
+git clone https://github.com/myitcv/govim.git
 
 # Typescript.
 git clone https://github.com/leafgarland/typescript-vim.git

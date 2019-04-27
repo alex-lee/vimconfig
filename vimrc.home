@@ -20,6 +20,7 @@ set smartcase       " Do smart case matching
 set incsearch       " Incremental search
 set hlsearch        " Highlight matches
 set mouse=a         " Enable mouse usage (all modes)
+set ttymouse=sgr
 set scrolloff=4     " Show some context at top and bottom of window
 set autoindent
 set tabstop=4
@@ -35,6 +36,9 @@ let mapleader = ","
 " File browser (netrw)
 let g:netrw_list_hide='.*\.swp,.*\.pyc'
 nnoremap <leader>E :Explore<CR>
+
+" Omnicomplete using C-Space
+inoremap <NUL> <C-x><C-o>
 
 " Quickfix navigation
 nmap <C-n> :cnext<CR>
