@@ -71,6 +71,7 @@ let g:syntastic_auto_jump = 1
 let g:syntastic_mode_map = {"mode": "passive"} " only run manually
 let g:syntastic_python_checkers = ['python', 'flake8', 'mypy', 'pylint']
 let g:syntastic_python_mypy_args = '--ignore-missing-imports'
+let g:syntastic_go_checkers = ['govet', 'gometalinter']
 
 " Clear signs (e.g. linter marks from syntastic, pymode, etc.)
 nmap <leader>L :sign unplace *<CR>
