@@ -60,16 +60,12 @@ git clone https://github.com/Vimjas/vim-python-pep8-indent.git
 # Go.
 git clone https://github.com/myitcv/govim.git
 
-# Typescript.
-git clone https://github.com/leafgarland/typescript-vim.git
-git clone https://github.com/Quramy/tsuquyomi.git
+# Elm.
+git clone https://github.com/Zaptic/elm-vim.git
 
 # Additional syntax highlighting.
 git clone https://github.com/plasticboy/vim-markdown.git
-git clone https://github.com/eloycoto/vim-ser.git
-git clone https://github.com/b4b4r07/vim-hcl.git
 git clone https://github.com/cespare/vim-toml.git toml
-git clone https://github.com/nathanielc/vim-tickscript.git
 ```
 
 These are less likely to be of interest.
@@ -77,4 +73,13 @@ These are less likely to be of interest.
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/sukima/xmledit.git
 git clone git://github.com/digitaltoad/vim-jade.git
+
+# Typescript.
+git clone https://github.com/leafgarland/typescript-vim.git
+git clone https://github.com/Quramy/tsuquyomi.git
+
+# Additional syntax highlighting.
+git clone https://github.com/eloycoto/vim-ser.git
+git clone https://github.com/b4b4r07/vim-hcl.git
+git clone https://github.com/nathanielc/vim-tickscript.git
 ```
