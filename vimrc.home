@@ -49,6 +49,9 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+" Fugitive shortcuts.
+nnoremap <leader>Gb :Gblame<CR>
+
 " Custom mappings:
 " reformat the paragraph
 nnoremap <leader>q gqap
