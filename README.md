@@ -21,21 +21,35 @@ sudo apt install vim
 ## Python support
 
 For simple linting I use `flake8`, via Syntastic.
+
 ```
 pip3 install --user flake8
 ```
+
 Example config:
+
 ```
 $ cat ~/.config/flake8
 [flake8]
 max_line_length = 100
 ```
 
-[mypy](http://mypy.readthedocs.io/en/latest/index.html) is also useful.
+[mypy](http://mypy.readthedocs.io/en/latest/index.html) is configured to be run
+with `--ignore-missing-imports` by default. It may make sense to configure
+behavior on a per-project basis, for example by putting the following in
+`setup.cfg`:
+
+```
+[mypy]
+ignore_missing_imports = True
+implicit_reexport = True
+namespace_packages = True
+```
 
 ## Packages
 
 Clone whichever ones you want into `~/.vim/pack/plugins/start`.
+
 ```
 # tmux integration and easier window navigation
 git clone git@github.com:christoomey/vim-tmux-navigator.git
@@ -57,29 +71,35 @@ git clone https://github.com/editorconfig/editorconfig-vim.git
 git clone --recursive https://github.com/davidhalter/jedi-vim.git
 git clone https://github.com/Vimjas/vim-python-pep8-indent.git
 
-# Go.
-git clone https://github.com/myitcv/govim.git
-
-# Elm.
-git clone https://github.com/Zaptic/elm-vim.git
-
 # Additional syntax highlighting.
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/cespare/vim-toml.git toml
 ```
 
 These are less likely to be of interest.
+
 ```
-git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/sukima/xmledit.git
 git clone git://github.com/digitaltoad/vim-jade.git
-
-# Typescript.
-git clone https://github.com/leafgarland/typescript-vim.git
-git clone https://github.com/Quramy/tsuquyomi.git
 
 # Additional syntax highlighting.
 git clone https://github.com/eloycoto/vim-ser.git
 git clone https://github.com/b4b4r07/vim-hcl.git
 git clone https://github.com/nathanielc/vim-tickscript.git
+```
+
+For the following, [neovim](https://neovim.io/) is actually preferred. See
+[neovimconfig](https://github.com/alex-lee/neovimconfig).
+
+```
+# Go.
+git clone https://github.com/myitcv/govim.git
+
+# Elm.
+git clone https://github.com/Zaptic/elm-vim.git
+
+# Javascript/TypeScript.
+git clone https://github.com/pangloss/vim-javascript.git
+git clone https://github.com/leafgarland/typescript-vim.git
+git clone https://github.com/Quramy/tsuquyomi.git
 ```
