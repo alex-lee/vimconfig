@@ -5,9 +5,15 @@ filetype plugin indent on
 syntax on
 
 " Appearance
-set number
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
-colorscheme solarized
+if exists('+termguicolors')
+  set termguicolors
+endif
+colorscheme solarized8
+
+set number
 set statusline=%<%F%h%m%r\ %=%l,%c%V\ %P
 set laststatus=2
 

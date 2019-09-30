@@ -55,7 +55,7 @@ Clone whichever ones you want into `~/.vim/pack/plugins/start`.
 git clone git@github.com:christoomey/vim-tmux-navigator.git
 
 # Nice colors.
-git clone git://github.com/altercation/vim-colors-solarized.git
+git clone git@github.com:lifepillar/vim-solarized8.git
 
 # Helpful tools.
 git clone https://github.com/mileszs/ack.vim.git
