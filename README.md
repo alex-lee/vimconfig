@@ -61,6 +61,7 @@ git clone git@github.com:lifepillar/vim-solarized8.git
 git clone https://github.com/mileszs/ack.vim.git
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 git clone https://github.com/tpope/vim-unimpaired.git
+git clone https://github.com/janko/vim-test.git
 
 # Additional tools.
 git clone https://github.com/majutsushi/tagbar.git
