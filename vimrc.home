@@ -57,8 +57,10 @@ nmap <C-p> :cprevious<CR>
 
 " fzf shortcuts
 nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fl :BLines<CR>
+nnoremap <leader>fL :Lines<CR>
+nnoremap <leader>rr :Rg<Space>
 
 " Fugitive shortcuts.
 nnoremap <leader>Gb :Gblame<CR>
@@ -88,11 +90,11 @@ let g:syntastic_python_mypy_args = '--ignore-missing-imports'
 let g:syntastic_go_checkers = ['govet', 'gometalinter']
 
 " vim.test
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
+nnoremap <leader>tn :TestNearest<CR>
+nnoremap <leader>tf :TestFile<CR>
+nnoremap <leader>ts :TestSuite<CR>
+nnoremap <leader>tl :TestLast<CR>
+nnoremap <leader>tg :TestVisit<CR>
 
 " Clear signs (e.g. linter marks from syntastic, pymode, etc.)
 nmap <leader>L :sign unplace *<CR>
