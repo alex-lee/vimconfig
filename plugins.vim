@@ -19,6 +19,8 @@ Plug 'junegunn/fzf.vim'
 " Syntax.
 Plug 'cespare/vim-toml'
 " Plug 'gabrielelana/vim-markdown'
+Plug 'b4b4r07/vim-hcl'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
