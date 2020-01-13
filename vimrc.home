@@ -33,6 +33,8 @@ set hlsearch        " Highlight matches
 set mouse=a         " Enable mouse usage (all modes)
 set ttymouse=sgr
 set scrolloff=4     " Show some context at top and bottom of window
+set sidescroll=1    " Make horizontal scrolling less jumpy
+set sidescrolloff=4 " Show some horizontal context at sides of window
 set autoindent
 set tabstop=4
 set shiftwidth=4
@@ -85,7 +87,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_auto_jump = 1
 let g:syntastic_mode_map = {"mode": "passive"} " only run manually
-let g:syntastic_python_checkers = ['python', 'flake8', 'mypy', 'pylint']
+let g:syntastic_python_checkers = ['python', 'flake8', 'mypy']
 let g:syntastic_python_mypy_args = '--ignore-missing-imports'
 let g:syntastic_go_checkers = ['govet', 'gometalinter']
 
