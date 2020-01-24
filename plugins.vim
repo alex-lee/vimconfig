@@ -26,4 +26,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'davidhalter/jedi-vim'
 
+" Documentation
+Plug 'vim-pandoc/vim-pandoc'
+
 call plug#end()

@@ -104,6 +104,9 @@ nmap <leader>L :sign unplace *<CR>
 " Markdown (plasticboy) settings
 let g:vim_markdown_folding_disabled = 1
 
+" vim-pandoc
+let g:pandoc#spell#enabled = 0
+
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
