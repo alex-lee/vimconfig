@@ -62,6 +62,8 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fL :Lines<CR>
+nnoremap <leader>ft :BTags<CR>
+nnoremap <leader>fT :Tags<CR>
 nnoremap <leader>rr :Rg<Space>
 
 " Fugitive shortcuts.
