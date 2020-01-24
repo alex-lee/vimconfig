@@ -2,6 +2,7 @@
 
 Clone this repository into `~/.vim` and use `vimrc.home` as your
 `~/.vimrc`:
+
 ```
 ln -s ~/.vim/vimrc.home ~/.vimrc
 ```

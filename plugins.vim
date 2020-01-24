@@ -7,12 +7,17 @@ Plug 'christoomey/vim-tmux-navigator'
 " Appearance.
 Plug 'lifepillar/vim-solarized8'
 
-" Tools.
+" General behavior.
+" Plug 'tpope/vim-unimpaired'
+
+" Development tools.
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-unimpaired'
 Plug 'janko/vim-test'
 Plug 'vim-syntastic/syntastic'
+" Plug 'dense-analysis/ale'
+
+" Search.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
