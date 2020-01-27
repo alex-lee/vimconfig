@@ -33,5 +33,6 @@ Plug 'davidhalter/jedi-vim'
 
 " Documentation
 Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()

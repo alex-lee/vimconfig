@@ -108,6 +108,9 @@ let g:vim_markdown_folding_disabled = 1
 
 " vim-pandoc
 let g:pandoc#spell#enabled = 0
+let g:pandoc#formatting#mode = "h"
+let g:pandoc#formatting#textwidth = 100
+let g:pandoc#syntax#conceal#use = 0
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
