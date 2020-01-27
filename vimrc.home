@@ -57,6 +57,10 @@ inoremap <NUL> <C-x><C-o>
 nmap <C-n> :cnext<CR>
 nmap <C-p> :cprevious<CR>
 
+" Location navigation
+nmap <silent> [l :lprevious<CR>
+nmap <silent> ]l :lnext<CR>
+
 " fzf shortcuts
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fb :Buffers<CR>
