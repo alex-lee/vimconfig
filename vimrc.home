@@ -19,8 +19,11 @@ endif
 colorscheme solarized8
 
 set number
-set statusline=%<%F%h%m%r\ %=%l,%c%V\ %P
-set laststatus=2
+
+" Status line
+if filereadable(expand('~/.vim/statusline.vim'))
+  source ~/.vim/statusline.vim
+endif
 
 " Behavior
 set backspace=2
@@ -50,16 +53,16 @@ let mapleader = ","
 let g:netrw_list_hide='.*\.swp,.*\.pyc'
 nnoremap <leader>E :Explore<CR>
 
+source ~/.vim/lsp.vim
+
 " Omnicomplete using C-Space
 inoremap <NUL> <C-x><C-o>
 
-" Quickfix navigation
-nmap <C-n> :cnext<CR>
-nmap <C-p> :cprevious<CR>
-
-" Location navigation
-nmap <silent> [l :lprevious<CR>
-nmap <silent> ]l :lnext<CR>
+" Quickfix and location navigation
+nnoremap <C-n> :cnext<CR>
+nnoremap <C-p> :cprevious<CR>
+nnoremap <leader>cc :cclose<CR>
+nnoremap <leader>lc :lclose<CR>
 
 " fzf shortcuts
 nnoremap <leader>ff :Files<CR>
@@ -75,7 +78,6 @@ nnoremap <leader>Gb :Gblame<CR>
 
 " Custom mappings:
 " reformat the paragraph
-nnoremap <leader>q gqap
 nnoremap Q gqap
 " easier than hitting escape
 inoremap jj <Esc>
@@ -86,16 +88,6 @@ command BD bp|bd #
 " For navigation, install https://github.com/christoomey/vim-tmux-navigator
 set splitbelow
 set splitright
-
-" Syntastic settings
-nmap <leader>l :SyntasticCheck<CR>
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_auto_jump = 1
-let g:syntastic_mode_map = {"mode": "passive"} " only run manually
-let g:syntastic_python_checkers = ['python', 'flake8', 'mypy']
-let g:syntastic_python_mypy_args = '--ignore-missing-imports'
-let g:syntastic_go_checkers = ['govet', 'gometalinter']
 
 " vim.test
 nnoremap <leader>tn :TestNearest<CR>
@@ -115,12 +107,3 @@ let g:pandoc#spell#enabled = 0
 let g:pandoc#formatting#mode = "h"
 let g:pandoc#formatting#textwidth = 100
 let g:pandoc#syntax#conceal#use = 0
-
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" Java
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-" Python
-autocmd FileType python setlocal completeopt-=preview

@@ -6,6 +6,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Appearance.
 Plug 'lifepillar/vim-solarized8'
+Plug 'itchyny/lightline.vim'
 
 " General behavior.
 " Plug 'tpope/vim-unimpaired'
@@ -14,8 +15,6 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'janko/vim-test'
-Plug 'vim-syntastic/syntastic'
-" Plug 'dense-analysis/ale'
 
 " Search.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -29,10 +28,16 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'davidhalter/jedi-vim'
 
 " Documentation
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+
+" LSP
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
 
 call plug#end()
