@@ -57,6 +57,8 @@ let g:lsp_settings = {
 \           'pyls': {
 \               'configurationSources': ['flake8'],
 \               'plugins': {
+\                   'pyflakes': {'enabled': v:false},
+\                   'flake8': {'enabled': v:true},
 \                   'pyls_mypy': {
 \                       'enabled': v:true,
 \                       'live_mode': v:false,
