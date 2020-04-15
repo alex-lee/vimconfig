@@ -1,12 +1,10 @@
-" vim: set expandtab:
-
 set nocompatible
 filetype plugin indent on
 syntax on
 
 " Load plugins.
 if filereadable(expand('~/.vim/plugins.vim'))
-  source ~/.vim/plugins.vim
+    source ~/.vim/plugins.vim
 endif
 
 " Appearance
@@ -14,7 +12,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
 if exists('+termguicolors')
-  set termguicolors
+    set termguicolors
 endif
 colorscheme solarized8
 
@@ -22,7 +20,7 @@ set number
 
 " Status line
 if filereadable(expand('~/.vim/statusline.vim'))
-  source ~/.vim/statusline.vim
+    source ~/.vim/statusline.vim
 endif
 
 " Behavior
@@ -53,10 +51,10 @@ let mapleader = ","
 let g:netrw_list_hide='.*\.swp,.*\.pyc'
 nnoremap <leader>E :Explore<CR>
 
-source ~/.vim/lsp.vim
-
-" Omnicomplete using C-Space
-inoremap <NUL> <C-x><C-o>
+" Load vim-lsp settings.
+if filereadable(expand('~/.vim/statusline.vim'))
+    source ~/.vim/lsp.vim
+endif
 
 " Quickfix and location navigation
 nnoremap <C-n> :cnext<CR>
@@ -95,6 +93,12 @@ nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>ts :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>tg :TestVisit<CR>
+
+" Syntastic settings.
+" Only use this for certain file types. See, e.g., after/ftplugin/sh.vim.
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_mode_map = {"mode": "passive"}
+let g:syntastic_python_checkers = []
 
 " Clear signs (e.g. linter marks from syntastic, pymode, etc.)
 nmap <leader>L :sign unplace *<CR>

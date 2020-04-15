@@ -35,10 +35,14 @@ flake8 and mypy:
 $ ~/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pip install flake8 mypy pyls_mypy future
 ```
 
-Example flake8 customization:
+Example customizations:
 
 ```
 $ cat ~/.config/flake8
 [flake8]
 max_line_length = 100
+
+$ cat ~/.config/mypy/config
+[mypy]
+ignore_missing_imports = True
 ```

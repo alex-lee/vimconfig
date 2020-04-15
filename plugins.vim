@@ -15,6 +15,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'janko/vim-test'
+Plug 'vim-syntastic/syntastic'
 
 " Search.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
