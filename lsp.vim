@@ -11,20 +11,32 @@
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal signcolumn=yes
+
     " diagnostics
     nmap <buffer> gA <plug>(lsp-document-diagnostics)
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+
     " navigate
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> gy <plug>(lsp-type-definition)
     nmap <buffer> gr <plug>(lsp-references)
+
     " info
     nmap <buffer> K <plug>(lsp-hover)
     nmap <buffer> <silent> <leader>pc <plug>(lsp-preview-close)
-    " format
-    nmap <buffer> <leader>F <plug>(lsp-document-format)
-    vmap <buffer> <leader>F <plug>(lsp-document-range-format)
+
+    " format (varies by filetype)
+    if &filetype == "json"
+        nmap <buffer> <leader>F :%LspDocumentRangeFormat<CR>
+        vmap <buffer> <leader>F <plug>(lsp-document-range-format)
+    elseif &filetype == "python"
+        nmap <buffer> <leader>F :%!black-macchiato -l 100<CR>
+        vmap <buffer> <leader>F :!black-macchiato -l 100<CR>
+    else
+        nmap <buffer> <leader>F <plug>(lsp-document-format)
+        vmap <buffer> <leader>F <plug>(lsp-document-range-format)
+    endif
 endfunction
 
 augroup lsp_install
