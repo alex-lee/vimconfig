@@ -24,6 +24,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <silent> <leader>pc <plug>(lsp-preview-close)
     " format
     nmap <buffer> <leader>F <plug>(lsp-document-format)
+    vmap <buffer> <leader>F <plug>(lsp-document-range-format)
 endfunction
 
 augroup lsp_install
@@ -65,6 +66,11 @@ let g:lsp_settings = {
 \                   },
 \               },
 \           },
+\       },
+\   },
+\   'json-languageserver': {
+\       'initialization_options': {
+\           'provideFormatter': v:true,
 \       },
 \   },
 \}
