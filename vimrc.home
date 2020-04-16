@@ -1,3 +1,5 @@
+" Symlink this to ~/.vimrc
+
 set nocompatible
 filetype plugin indent on
 syntax on
@@ -23,7 +25,7 @@ if filereadable(expand('~/.vim/statusline.vim'))
     source ~/.vim/statusline.vim
 endif
 
-" Behavior
+" General behavior
 set backspace=2
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
@@ -44,8 +46,7 @@ set nojoinspaces
 set nofoldenable
 set modeline        " Enable modeline for per-file vim settings
 
-" Custom leader
-let mapleader = ","
+let mapleader = ','
 
 " File browser (netrw)
 let g:netrw_list_hide='.*\.swp,.*\.pyc'
@@ -97,7 +98,7 @@ nnoremap <leader>tg :TestVisit<CR>
 " Syntastic settings.
 " Only use this for certain file types. See, e.g., after/ftplugin/sh.vim.
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_mode_map = {"mode": "passive"}
+let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_python_checkers = []
 
 " Clear signs (e.g. linter marks from syntastic, pymode, etc.)
@@ -108,6 +109,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " vim-pandoc
 let g:pandoc#spell#enabled = 0
-let g:pandoc#formatting#mode = "h"
+let g:pandoc#formatting#mode = 'h'
 let g:pandoc#formatting#textwidth = 100
 let g:pandoc#syntax#conceal#use = 0

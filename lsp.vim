@@ -27,10 +27,10 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <silent> <leader>pc <plug>(lsp-preview-close)
 
     " format (varies by filetype)
-    if &filetype == "json"
+    if &filetype ==# 'json'
         nmap <buffer> <leader>F :%LspDocumentRangeFormat<CR>
         vmap <buffer> <leader>F <plug>(lsp-document-range-format)
-    elseif &filetype == "python"
+    elseif &filetype ==# 'python'
         nmap <buffer> <leader>F :%!black-macchiato -l 100<CR>
         vmap <buffer> <leader>F :!black-macchiato -l 100<CR>
     else
@@ -80,12 +80,8 @@ let g:lsp_settings = {
 \           },
 \       },
 \   },
-\   'json-languageserver': {
-\       'initialization_options': {
-\           'provideFormatter': v:true,
-\       },
-\   },
 \}
 
+" Uncomment these for troubleshooting.
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('~/vim-lsp.log')

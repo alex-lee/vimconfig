@@ -46,3 +46,46 @@ $ cat ~/.config/mypy/config
 [mypy]
 ignore_missing_imports = True
 ```
+
+### Additional linters
+
+For additional linters that aren't supported by a filetype's LSP server, [syntastic] is used. By
+default, syntastic is put into passive mode. It can be activated on a per-filetype basis.
+
+For example, this is `after/ftplugin/sh.vim` (in order to get [shellcheck]):
+
+```vim
+let b:syntastic_mode = "active"
+nnoremap <buffer> <leader>l :SyntasticCheck<CR>
+```
+
+[syntastic]: https://github.com/vim-syntastic/syntastic
+[shellcheck]: https://www.shellcheck.net/
+
+## Mappings
+
+### vim-lsp
+
+If a filetype has a language server installed, the following normal mode mappings will added:
+
+* `gA` – show all diagnostics
+* `[g` – go to previous diagnostic
+* `]g` – go to next diagnostic
+* `gd` – go to definition
+* `gy` – go to type definition
+* `gr` – show references (currently only works on current buffer…)
+* `K` – show hover info
+* `<leader>pc` – close preview window
+* `<leader>F` – format document (or format range in visual mode)
+
+### fzf
+
+The following fzf normal mode mappings are defined:
+
+* `<leader>ff` – search files
+* `<leader>fb` – search loaded buffers
+* `<leader>fl` – search lines in current buffer
+* `<leader>fL` – search lines in loaded buffers
+* `<leader>ft` – search tags in current buffer
+* `<leader>fT` – search tags (sometimes requires tags to be rebuilt…)
+* `<leader>rr` – ripgrep search
