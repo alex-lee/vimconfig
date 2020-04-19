@@ -1,13 +1,22 @@
-" Set explicit python paths.
-" These should be virtualenvs set up for neovim.
-" If not set, you will encounter problems when working in other virtualenvs.
-" https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
-let g:python_host_prog = $HOME . '/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = $HOME . '/.pyenv/versions/neovim3/bin/python'
+if has('nvim')
+    let s:base_dir = $HOME . '/.config/nvim'
+else
+    let s:base_dir = $HOME . '/.vim'
+endif
+
+if has('nvim')
+    " Set explicit python paths.
+    " These should be virtualenvs set up for neovim.
+    " If not set, you will encounter problems when working in other virtualenvs.
+    " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+    let g:python_host_prog = $HOME . '/.pyenv/versions/neovim2/bin/python'
+    let g:python3_host_prog = $HOME . '/.pyenv/versions/neovim3/bin/python'
+endif
 
 " Load plugins.
-if filereadable(expand('~/.config/nvim/plugins.vim'))
-    source ~/.config/nvim/plugins.vim
+let s:plugins_config = s:base_dir . '/plugins.vim'
+if filereadable(s:plugins_config)
+    exec 'source ' . s:base_dir . '/plugins.vim'
 endif
 
 " Appearance.
@@ -20,8 +29,9 @@ colorscheme NeoSolarized
 set number
 
 " Status line.
-if filereadable(expand('~/.vim/statusline.vim'))
-    source ~/.vim/statusline.vim
+let s:statusline_config = s:base_dir . '/statusline.vim'
+if filereadable(s:statusline_config)
+    exec 'source ' . s:statusline_config
 endif
 
 " General behavior.
@@ -39,8 +49,9 @@ let mapleader = ','
 nnoremap <leader>E :Explore<CR>
 
 " Load vim-lsp settings.
-if filereadable(expand('~/.vim/statusline.vim'))
-    source ~/.vim/lsp.vim
+let s:lsp_config = s:base_dir . '/lsp.vim'
+if filereadable(s:lsp_config)
+    exec 'source ' . s:lsp_config
 endif
 
 " Quickfix navigation.
