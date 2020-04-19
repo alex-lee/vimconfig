@@ -28,12 +28,8 @@ For further details, see `lsp.vim`.
 
 ### Python
 
-Make sure the python language server has been installed. Then run the following to add support for
-flake8 and mypy:
-
-```sh
-$ ~/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pip install flake8 mypy pyls_mypy future
-```
+Make sure that `flake8` and `mypy` are available. The easiest way to install is via [pipx]. For best
+results, make sure these are installed with the most recent version of Python.
 
 Example customizations:
 
@@ -46,6 +42,8 @@ $ cat ~/.config/mypy/config
 [mypy]
 ignore_missing_imports = True
 ```
+
+[pipx]: https://github.com/pipxproject/pipx
 
 ### efm-langserver
 

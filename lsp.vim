@@ -54,31 +54,12 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 let g:lsp_settings = {}
 
-" Python settings.
-" Install any necessary programs into the vim-lsp-settings venv, e.g.:
-"   $ ~/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pip install flake8 mypy pyls_mypy future
-" (For some reason I had to manually install the future package.)
-let g:lsp_settings['pyls'] = {
-\   'workspace_config': {
-\       'pyls': {
-\           'configurationSources': ['flake8'],
-\           'plugins': {
-\               'pyflakes': {'enabled': v:false},
-\               'flake8': {'enabled': v:true},
-\               'pyls_mypy': {
-\                   'enabled': v:true,
-\                   'live_mode': v:false,
-\               },
-\           },
-\       },
-\   },
-\}
-
 " Use efm-langserver to augment certain filetypes.
 let g:lsp_settings['efm-langserver'] = {
 \   'disabled': v:false,
 \   'whitelist': [
 \       'json',
+\       'python',
 \       'sh',
 \   ],
 \}
