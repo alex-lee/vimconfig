@@ -1,11 +1,21 @@
 " Specify a directory for plugins.
-call plug#begin('~/.vim/plugged')
+if has('nvim')
+    let s:plugins_dir = $HOME . '/.config/nvim/plugged-nvim'
+else
+    let s:plugins_dir = $HOME . '/.vim/plugged-vim'
+endif
+
+call plug#begin(s:plugins_dir)
 
 " tmux integration.
 Plug 'christoomey/vim-tmux-navigator'
 
 " Appearance.
-Plug 'lifepillar/vim-solarized8'
+if has('nvim')
+    Plug 'iCyMind/NeoSolarized'
+else
+    Plug 'lifepillar/vim-solarized8'
+endif
 Plug 'itchyny/lightline.vim'
 
 " General behavior.

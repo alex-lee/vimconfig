@@ -1,13 +1,13 @@
-# Vim setup notes
+# Configuration for Vim and Neovim
 
-Clone this repository into `~/.vim` and use `vimrc.home` as your
-`~/.vimrc`:
+These configs can be used with vim 8 and/or neovim. Clone this repository into `~/.vim` or
+`~/.config/nvim`. (For shared use, clone to one location, then symlink to the other.)
+
+For vim 8, set up the following symlink:
 
 ```
-ln -s ~/.vim/vimrc.home ~/.vimrc
+ln -s ~/.vim/init.vim ~/.vimrc
 ```
-
-This config expects vim 8.
 
 ## Plugins
 
@@ -31,15 +31,19 @@ For further details, see `lsp.vim`.
 Make sure that `flake8` and `mypy` are available. The easiest way to install is via [pipx]. For best
 results, make sure these are installed with the most recent version of Python.
 
-Example customizations:
+Example `~/.config/flake8`:
 
 ```
-$ cat ~/.config/flake8
 [flake8]
 max_line_length = 100
+```
 
-$ cat ~/.config/mypy/config
+Example `~/.config/mypy/config`. The `python_executable` setting ensures that the virtualenv's
+interpreter is used.
+
+```
 [mypy]
+python_executable = $HOME/.pyenv/shims/python
 ignore_missing_imports = True
 ```
 
