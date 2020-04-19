@@ -1,8 +1,8 @@
 " Specify a directory for plugins.
 if has('nvim')
-    let s:plugins_dir = $HOME . '/.config/nvim/plugged'
+    let s:plugins_dir = $HOME . '/.config/nvim/plugged-nvim'
 else
-    let s:plugins_dir = $HOME . '/.vim/plugged'
+    let s:plugins_dir = $HOME . '/.vim/plugged-vim'
 endif
 
 call plug#begin(s:plugins_dir)

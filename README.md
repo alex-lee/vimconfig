@@ -1,13 +1,13 @@
-# Vim setup notes
+# Configuration for Vim and Neovim
 
-Clone this repository into `~/.vim` and use `vimrc.home` as your
-`~/.vimrc`:
+These configs can be used with vim 8 and/or neovim. Clone this repository into `~/.vim` or
+`~/.config/nvim`. (For shared use, clone to one location, then symlink to the other.)
+
+For vim 8, set up the following symlink:
 
 ```
-ln -s ~/.vim/vimrc.home ~/.vimrc
+ln -s ~/.vim/init.vim ~/.vimrc
 ```
-
-This config expects vim 8.
 
 ## Plugins
 
