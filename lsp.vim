@@ -27,16 +27,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <silent> <leader>pc <plug>(lsp-preview-close)
 
     " format (varies by filetype)
-    if &filetype ==# 'json'
-        nmap <buffer> <leader>F :%LspDocumentRangeFormat<CR>
-        vmap <buffer> <leader>F <plug>(lsp-document-range-format)
-    elseif &filetype ==# 'python'
-        nmap <buffer> <leader>F :%!black-macchiato -l 100<CR>
-        vmap <buffer> <leader>F :!black-macchiato -l 100<CR>
-    else
-        nmap <buffer> <leader>F <plug>(lsp-document-format)
-        vmap <buffer> <leader>F <plug>(lsp-document-range-format)
-    endif
+    nmap <buffer> <leader>F <plug>(lsp-document-format)
+    vmap <buffer> <leader>F <plug>(lsp-document-range-format)
 endfunction
 
 augroup lsp_install
@@ -60,26 +52,16 @@ inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<CR>"
 " auto close preview window when selection is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" Python settings.
-" Install any necessary programs into the vim-lsp-settings venv, e.g.:
-"   $ ~/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pip install flake8 mypy pyls_mypy future
-" (For some reason I had to manually install the future package.)
-let g:lsp_settings = {
-\   'pyls': {
-\       'workspace_config': {
-\           'pyls': {
-\               'configurationSources': ['flake8'],
-\               'plugins': {
-\                   'pyflakes': {'enabled': v:false},
-\                   'flake8': {'enabled': v:true},
-\                   'pyls_mypy': {
-\                       'enabled': v:true,
-\                       'live_mode': v:false,
-\                   },
-\               },
-\           },
-\       },
-\   },
+let g:lsp_settings = {}
+
+" Use efm-langserver to augment certain filetypes.
+let g:lsp_settings['efm-langserver'] = {
+\   'disabled': v:false,
+\   'whitelist': [
+\       'json',
+\       'python',
+\       'sh',
+\   ],
 \}
 
 " Uncomment these for troubleshooting.

@@ -9,7 +9,7 @@ if filereadable(expand('~/.vim/plugins.vim'))
     source ~/.vim/plugins.vim
 endif
 
-" Appearance
+" Appearance.
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
@@ -20,12 +20,12 @@ colorscheme solarized8
 
 set number
 
-" Status line
+" Status line.
 if filereadable(expand('~/.vim/statusline.vim'))
     source ~/.vim/statusline.vim
 endif
 
-" General behavior
+" General behavior.
 set backspace=2
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
@@ -42,28 +42,28 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set textwidth=100
-set nojoinspaces
-set nofoldenable
+set nojoinspaces    " Don't add extra spaces when joining lines.
+set nofoldenable    " Disable folding.
 set modeline        " Enable modeline for per-file vim settings
 
 let mapleader = ','
 
-" File browser (netrw)
+" File browser (netrw).
 let g:netrw_list_hide='.*\.swp,.*\.pyc'
 nnoremap <leader>E :Explore<CR>
 
 " Load vim-lsp settings.
-if filereadable(expand('~/.vim/statusline.vim'))
+if filereadable(expand('~/.vim/lsp.vim'))
     source ~/.vim/lsp.vim
 endif
 
-" Quickfix and location navigation
+" Quickfix navigation.
 nnoremap <C-n> :cnext<CR>
 nnoremap <C-p> :cprevious<CR>
 nnoremap <leader>cc :cclose<CR>
 nnoremap <leader>lc :lclose<CR>
 
-" fzf shortcuts
+" fzf shortcuts.
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fl :BLines<CR>
@@ -95,13 +95,7 @@ nnoremap <leader>ts :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>tg :TestVisit<CR>
 
-" Syntastic settings.
-" Only use this for certain file types. See, e.g., after/ftplugin/sh.vim.
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_mode_map = {'mode': 'passive'}
-let g:syntastic_python_checkers = []
-
-" Clear signs (e.g. linter marks from syntastic, pymode, etc.)
+" Clear signs.
 nmap <leader>L :sign unplace *<CR>
 
 " Markdown (plasticboy) settings
