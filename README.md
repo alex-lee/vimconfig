@@ -47,20 +47,14 @@ $ cat ~/.config/mypy/config
 ignore_missing_imports = True
 ```
 
-### Additional linters
+### efm-langserver
 
-For additional linters that aren't supported by a filetype's LSP server, [syntastic] is used. By
-default, syntastic is put into passive mode. It can be activated on a per-filetype basis.
+To augment functionality in a filetype's main LSP server, [efm-langserver] is used.
 
-For example, this is `after/ftplugin/sh.vim` (in order to get [shellcheck]):
+* Add the filetype to the whitelist in `g:lsp_settings['efm-langserver']` (see `lsp.vim`).
+* Extend your `~/.config/efm-langserver/config.yaml` (a sample config is provided in this repo).
 
-```vim
-let b:syntastic_mode = "active"
-nnoremap <buffer> <leader>l :SyntasticCheck<CR>
-```
-
-[syntastic]: https://github.com/vim-syntastic/syntastic
-[shellcheck]: https://www.shellcheck.net/
+[efm-langserver]: https://github.com/mattn/efm-langserver
 
 ## Mappings
 

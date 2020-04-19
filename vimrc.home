@@ -95,13 +95,7 @@ nnoremap <leader>ts :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>tg :TestVisit<CR>
 
-" Syntastic settings.
-" Only use this for certain file types. See, e.g., after/ftplugin/sh.vim.
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_mode_map = {'mode': 'passive'}
-let g:syntastic_python_checkers = []
-
-" Clear signs (e.g. linter marks from syntastic, pymode, etc.)
+" Clear signs.
 nmap <leader>L :sign unplace *<CR>
 
 " Markdown (plasticboy) settings
