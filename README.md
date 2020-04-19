@@ -31,15 +31,19 @@ For further details, see `lsp.vim`.
 Make sure that `flake8` and `mypy` are available. The easiest way to install is via [pipx]. For best
 results, make sure these are installed with the most recent version of Python.
 
-Example customizations:
+Example `~/.config/flake8`:
 
 ```
-$ cat ~/.config/flake8
 [flake8]
 max_line_length = 100
+```
 
-$ cat ~/.config/mypy/config
+Example `~/.config/mypy/config`. The `python_executable` setting ensures that the virtualenv's
+interpreter is used.
+
+```
 [mypy]
+python_executable = $HOME/.pyenv/shims/python
 ignore_missing_imports = True
 ```
 
