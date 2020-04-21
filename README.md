@@ -28,8 +28,9 @@ For further details, see `lsp.vim`.
 
 ### Python
 
-Make sure that `flake8` and `mypy` are available. The easiest way to install is via [pipx]. For best
-results, make sure these are installed with the most recent version of Python.
+Make sure that [flake8] and [mypy] are available. The easiest way to install is via [pipx]. For best
+results, make sure these are installed with the most recent version of Python (e.g., `pipx install
+flake8 --python ~/.pyenv/versions/3.8.2/bin/python`).
 
 Example `~/.config/flake8`:
 
@@ -47,14 +48,32 @@ python_executable = $HOME/.pyenv/shims/python
 ignore_missing_imports = True
 ```
 
+Currently I find best results using these via [efm-langserver] (as described below).
+
+For formatting support, adding the [pyls-black] plugin is recommended. This should be installed in
+the same virtualenv as `pyls`:
+
+```
+$ ~/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pip install pyls-black
+```
+
+[flake8]: http://flake8.pycqa.org/en/latest/index.html
+[mypy]: http://mypy-lang.org/
 [pipx]: https://github.com/pipxproject/pipx
+[pyls-black]: https://github.com/rupert/pyls-black
 
 ### efm-langserver
 
 To augment functionality in a filetype's main LSP server, [efm-langserver] is used.
 
+* Copy or symlink this repository's `efm-langserver-config.yaml` to
+  `~/.config/efm-langserver/config.yaml`. Or make your own from scratch.
+* Then `:LspInstallServer efm-langserver`.
+
+To add support for additional filetypes or tools:
+
 * Add the filetype to the whitelist in `g:lsp_settings['efm-langserver']` (see `lsp.vim`).
-* Extend your `~/.config/efm-langserver/config.yaml` (a sample config is provided in this repo).
+* Update `~/.config/efm-langserver/config.yaml` as desired.
 
 [efm-langserver]: https://github.com/mattn/efm-langserver
 
