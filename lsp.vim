@@ -60,7 +60,9 @@ let g:lsp_settings['efm-langserver'] = {
 \   'whitelist': [
 \       'json',
 \       'python',
+\       'rst',
 \       'sh',
+\       'yaml',
 \   ],
 \}
 
