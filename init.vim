@@ -138,3 +138,4 @@ let g:pandoc#spell#enabled = 0
 let g:pandoc#formatting#mode = 'h'
 let g:pandoc#formatting#textwidth = 100
 let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#biblio#sources = "bgy"
