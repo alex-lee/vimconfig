@@ -72,6 +72,11 @@ set textwidth=100
 
 let mapleader = ','
 
+" Improved window splitting.
+" For navigation, install https://github.com/christoomey/vim-tmux-navigator
+set splitbelow
+set splitright
+
 " File browser (netrw).
 let g:netrw_list_hide='.*\.swp,.*\.pyc'
 nnoremap <leader>E :Explore<CR>
@@ -104,18 +109,19 @@ nnoremap <leader>rr :Rg<Space>
 " Fugitive shortcuts.
 nnoremap <leader>Gb :Gblame<CR>
 
-" Custom mappings:
+" Additional custom mappings:
 " reformat the paragraph
 nnoremap Q gqap
 " easier than hitting escape
 inoremap jj <Esc>
 " close the buffer, but don't close the window (instead load previous)
-command BD bp|bd #
-
-" Improved window splitting.
-" For navigation, install https://github.com/christoomey/vim-tmux-navigator
-set splitbelow
-set splitright
+command! BD bp|bd #
+" highlight <cword>, but don't automatically jump to the next match.
+nnoremap <silent> <leader>* :<C-u>let @/ = expand('<cword>')<CR>:set hlsearch<CR>
+" clear highlight.
+nnoremap <silent> <leader>n :nohlsearch<CR>
+" clear signs.
+nmap <leader>L :sign unplace *<CR>
 
 " vim.test
 nnoremap <leader>tn :TestNearest<CR>
@@ -123,9 +129,6 @@ nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>ts :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>tg :TestVisit<CR>
-
-" Clear signs.
-nmap <leader>L :sign unplace *<CR>
 
 " Markdown (plasticboy) settings
 let g:vim_markdown_folding_disabled = 1
