@@ -7,6 +7,10 @@
 
 version: 2
 
+# Tags-based definition is turned off, because it's not needed here and could cause duplicate
+# results.
+provide-definition: false
+
 tools:
 
   json-prettier: &json-prettier

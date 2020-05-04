@@ -48,19 +48,20 @@ python_executable = $HOME/.pyenv/shims/python
 ignore_missing_imports = True
 ```
 
-Currently I find best results using these via [efm-langserver] (as described below).
+Currently I find best results using these via [efm-langserver][efm-langserver] (as described below).
 
-For formatting support, adding the [pyls-black] plugin is recommended. This should be installed in
-the same virtualenv as `pyls`:
+For formatting support, adding the [pyls-black] or [pyls-black-macchiato] plugin is recommended.
+This should be installed in the same virtualenv as `pyls`:
 
 ```
-$ ~/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pip install pyls-black
+$ ~/.local/share/vim-lsp-settings/servers/pyls/venv/bin/pip install pyls-black-macchiato
 ```
 
 [flake8]: http://flake8.pycqa.org/en/latest/index.html
 [mypy]: http://mypy-lang.org/
 [pipx]: https://github.com/pipxproject/pipx
 [pyls-black]: https://github.com/rupert/pyls-black
+[pyls-black-macchiato]: https://github.com/alex-lee/pyls-black-macchiato
 
 ### efm-langserver
 
