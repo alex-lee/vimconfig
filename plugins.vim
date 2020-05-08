@@ -39,6 +39,10 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
 
+" TypeScript.
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 " Documentation
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
