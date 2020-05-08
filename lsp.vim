@@ -66,6 +66,13 @@ let g:lsp_settings['efm-langserver'] = {
 \   ],
 \}
 
+let g:lsp_settings_filetype_go = ['gopls', 'golangci-lint-langserver']
+let g:lsp_settings['golangci-lint-langserver'] = {
+\   'initialization_options': {
+\       'command': ['golangci-lint', 'run', '--out-format', 'json'],
+\   },
+\}
+
 " Uncomment these for troubleshooting.
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('~/vim-lsp.log')
