@@ -40,6 +40,9 @@ augroup END
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 
+" Colors.
+highlight link LspHintText Todo
+
 " Autocomplete.
 let g:asyncomplete_popup_delay = 200
 imap <C-Space> <Plug>(asyncomplete_force_refresh)
