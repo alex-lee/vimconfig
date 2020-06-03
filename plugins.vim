@@ -30,18 +30,19 @@ Plug 'janko/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Syntax.
+" Syntax and formatting.
 Plug 'cespare/vim-toml'
 " Plug 'gabrielelana/vim-markdown'
 Plug 'b4b4r07/vim-hcl'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'prettier/vim-prettier'
 
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
 
 " TypeScript.
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 " Documentation
 Plug 'vim-pandoc/vim-pandoc'

@@ -76,6 +76,9 @@ let g:lsp_settings['golangci-lint-langserver'] = {
 \   },
 \}
 
+let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server']
+let g:lsp_settings_filetype_typescriptreact = ['typescript-language-server', 'eslint-language-server']
+
 " Uncomment these for troubleshooting.
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('~/vim-lsp.log')
