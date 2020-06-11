@@ -87,6 +87,12 @@ if filereadable(s:lsp_config)
     exec 'source ' . s:lsp_config
 endif
 
+" Other mappings.
+let s:input_config = s:base_dir . '/input.vim'
+if filereadable(s:input_config)
+    exec 'source ' . s:input_config
+endif
+
 " Quickfix navigation.
 nnoremap <C-n> :cnext<CR>
 nnoremap <C-p> :cprevious<CR>
