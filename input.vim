@@ -1,13 +1,33 @@
 " Language input helpers.
 
-inoremap <C-space>a ā
-inoremap <C-space>e ē
-inoremap <C-space>i ī
-inoremap <C-space>o ō
-inoremap <C-space>u ū
+function! LatinMappingsEnable() abort
+    inoremap á ā
+    inoremap é ē
+    inoremap í ī
+    inoremap ó ō
+    inoremap ú ū
+    inoremap ü ȳ
 
-inoremap <C-space>A Ā
-inoremap <C-space>E Ē
-inoremap <C-space>I Ī
-inoremap <C-space>O Ō
-inoremap <C-space>U Ū
+    inoremap Á Ā
+    inoremap É Ē
+    inoremap Í Ī
+    inoremap Ó Ō
+    inoremap Ú Ū
+    inoremap Ü Ȳ
+endfunction
+
+function! LatinMappingsDisable() abort
+    iunmap á
+    iunmap é
+    iunmap í
+    iunmap ó
+    iunmap ú
+    iunmap ü
+
+    iunmap Á
+    iunmap É
+    iunmap Í
+    iunmap Ó
+    iunmap Ú
+    iunmap Ü
+endfunction
