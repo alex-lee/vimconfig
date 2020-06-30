@@ -44,6 +44,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
+" Go
+Plug 'mattn/vim-goimports'
+
 " Documentation
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
