@@ -104,7 +104,7 @@ nmap <silent> [l :lprevious<CR>
 nmap <silent> ]l :lnext<CR>
 
 " fzf shortcuts.
-nnoremap <leader>ff :Files<CR>
+nnoremap <leader>ff :GFiles<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fL :Lines<CR>
