@@ -75,6 +75,11 @@ let g:lsp_settings['golangci-lint-langserver'] = {
 \       'command': ['golangci-lint', 'run', '--out-format', 'json'],
 \   },
 \}
+let g:lsp_settings['gopls'] = {
+\   'config': {
+\       'experimentalDiagnosticsDelay': '250ms',
+\   },
+\}
 
 let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server']
 let g:lsp_settings_filetype_typescriptreact = ['typescript-language-server', 'eslint-language-server']
