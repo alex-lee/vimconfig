@@ -44,6 +44,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
+" Svelte.
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
 " Go
 Plug 'mattn/vim-goimports'
 
