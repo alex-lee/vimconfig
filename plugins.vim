@@ -50,6 +50,9 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 " Go
 Plug 'mattn/vim-goimports'
 
+" Nix
+Plug 'LnL7/vim-nix'
+
 " Documentation
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'

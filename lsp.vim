@@ -84,6 +84,15 @@ let g:lsp_settings['gopls'] = {
 let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server']
 let g:lsp_settings_filetype_typescriptreact = ['typescript-language-server', 'eslint-language-server']
 
+" Separate config for rnix-lsp.
+if executable('rnix-lsp')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'rnix-lsp',
+                \ 'cmd': {server_info->[&shell, &shellcmdflag, 'rnix-lsp']},
+                \ 'whitelist': ['nix'],
+                \ })
+endif
+
 " Uncomment these for troubleshooting.
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('~/vim-lsp.log')
