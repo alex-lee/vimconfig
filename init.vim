@@ -81,8 +81,12 @@ set splitright
 let g:netrw_list_hide='.*\.swp,.*\.pyc'
 nnoremap <leader>E :Explore<CR>
 
-" Load vim-lsp settings.
-let s:lsp_config = s:base_dir . '/lsp.vim'
+" Load LSP settings.
+if has('nvim')
+    let s:lsp_config = s:base_dir . '/lsp-nvim.vim'
+else
+    let s:lsp_config = s:base_dir . '/lsp-vim.vim'
+endif
 if filereadable(s:lsp_config)
     exec 'source ' . s:lsp_config
 endif
