@@ -83,12 +83,12 @@ nnoremap <leader>E :Explore<CR>
 
 " Load LSP settings.
 if has('nvim')
-    let s:lsp_config = s:base_dir . '/lsp-nvim.vim'
+    lua require('lsp-init')
 else
     let s:lsp_config = s:base_dir . '/lsp-vim.vim'
-endif
-if filereadable(s:lsp_config)
-    exec 'source ' . s:lsp_config
+    if filereadable(s:lsp_config)
+        exec 'source ' . s:lsp_config
+    endif
 endif
 
 " Other mappings.
