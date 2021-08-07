@@ -30,9 +30,9 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', 'gA', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
-    buf_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts) 
+    buf_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     if vim.bo.filetype ~= 'python' then
-        buf_set_keymap('v', '<leader>F', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts) 
+        buf_set_keymap('v', '<leader>F', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
     end
 
     -- Enable symbol highlights.
