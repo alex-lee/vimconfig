@@ -15,7 +15,29 @@ This repository includes a recent version of
 [vim-plug](https://github.com/junegunn/vim-plug). A list of plugins to use is
 specified in `plugins.vim`.
 
-## Language support
+## Language support (neovim)
+
+Neovim's builtin language server client is used, together with [nvim-lspconfig].
+
+For many of the support tools, the easiest way to install will be via [nix]
+
+[nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
+[nix]: https://nixos.org/
+
+### Lua
+
+```
+$ nix-env -iA nixpkgs.sumneko-lua-language-server
+$ nix-env -iA nixpkgs.luaformatter
+```
+
+### Nix
+
+```
+$ nix-env -iA nixpkgs.rnix-lsp
+```
+
+## Language support (vim8)
 
 Language support is provided by [vim-lsp] and [vim-lsp-settings].
 
