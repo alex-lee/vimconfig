@@ -21,10 +21,13 @@ nvim_lsp.jsonls.setup {
     commands = {
         Format = {function() vim.lsp.buf.range_formatting({}, {0, 0}, {vim.fn.line("$"), 0}) end}
     },
-    flags = {debounce_text_changes = 150}
+    flags = {debounce_text_changes = 150},
+    on_attach = on_attach
 }
 
-local servers = {"dockerls", "gopls", "jedi_language_server", "rnix", "svelte", "tsserver"}
+local servers = {
+    "dockerls", "gopls", "jedi_language_server", "rnix", "svelte", "tsserver", "yamlls"
+}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {on_attach = on_attach, flags = {debounce_text_changes = 150}}
 end
