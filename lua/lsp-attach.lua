@@ -1,3 +1,6 @@
+-- Don't enable symbol highlights for these file types.
+local highlight_enabled = {json = false, nix = false, yaml = false}
+
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -37,7 +40,7 @@ local on_attach = function(client, bufnr)
     end
 
     -- Enable symbol highlights.
-    if vim.bo.filetype ~= "nix" then
+    if highlight_enabled[vim.bo.filetype] ~= false then
         vim.api.nvim_command [[autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()]]
         vim.api.nvim_command [[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]]
         vim.api.nvim_command [[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]]
