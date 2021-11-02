@@ -57,11 +57,22 @@ Plug 'LnL7/vim-nix'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
-" LSP
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'mattn/vim-lsp-settings'
+" Only use vim-lsp with vim. For neovim, use the builtin client.
+if has('nvim')
+    " Plugins for nvim-lsp.
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
+    " Use this for python range formatting.
+    Plug 'smbl64/vim-black-macchiato'
+    " Support highlight colors.
+    Plug 'folke/lsp-colors.nvim'
+else
+    " vim-lsp and related plugins.
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'mattn/vim-lsp-settings'
+endif
 
 call plug#end()
