@@ -133,6 +133,8 @@ nnoremap <silent> <leader>g* :<C-u>let @/ = expand('<cword>')<CR>:set hlsearch<C
 nnoremap <silent> <leader>n :nohlsearch<CR>
 " clear signs.
 nmap <leader>L :sign unplace *<CR>
+" make
+nmap <F5> :make<CR>
 
 " vim.test
 nnoremap <leader>tn :TestNearest<CR>

@@ -56,6 +56,7 @@ Plug 'LnL7/vim-nix'
 " Documentation
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'aklt/plantuml-syntax'
 
 " Only use vim-lsp with vim. For neovim, use the builtin client.
 if has('nvim')
