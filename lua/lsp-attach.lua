@@ -45,6 +45,10 @@ local on_attach = function(client, bufnr)
         vim.api.nvim_command [[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]]
         vim.api.nvim_command [[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]]
     end
+
+    -- Force enable formatting capability for yamlls.
+    -- See https://github.com/redhat-developer/yaml-language-server/issues/486
+    if vim.bo.filetype == "yaml" then client.resolved_capabilities.document_formatting = true end
 end
 
 return {on_attach = on_attach}

@@ -15,6 +15,12 @@ This repository includes a recent version of
 [vim-plug](https://github.com/junegunn/vim-plug). A list of plugins to use is
 specified in `plugins.vim`.
 
+## Common dependencies
+
+```
+$ go install golang.org/x/tools/cmd/goimports@latest
+```
+
 ## Language support (neovim)
 
 Neovim's builtin language server client is used, together with [nvim-lspconfig].

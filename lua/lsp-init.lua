@@ -26,7 +26,7 @@ nvim_lsp.jsonls.setup {
 }
 
 local servers = {
-    "dockerls", "gopls", "jedi_language_server", "rnix", "svelte", "tsserver", "yamlls"
+    "bashls", "dockerls", "gopls", "jedi_language_server", "rnix", "svelte", "tsserver", "yamlls"
 }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {on_attach = on_attach, flags = {debounce_text_changes = 150}}
