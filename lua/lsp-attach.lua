@@ -1,5 +1,5 @@
 -- Don't enable symbol highlights for these file types.
-local highlight_enabled = {json = false, nix = false, yaml = false}
+local highlight_enabled = {json = false, nix = false, svelte = false, yaml = false}
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
