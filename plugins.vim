@@ -32,6 +32,7 @@ Plug 'junegunn/fzf.vim'
 
 " Syntax and formatting.
 Plug 'cespare/vim-toml'
+Plug 'osohq/polar.vim'
 " Plug 'gabrielelana/vim-markdown'
 Plug 'b4b4r07/vim-hcl'
 Plug 'Glench/Vim-Jinja2-Syntax'
