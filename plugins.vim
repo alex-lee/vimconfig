@@ -31,12 +31,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Syntax and formatting.
-Plug 'cespare/vim-toml'
 Plug 'osohq/polar.vim'
-" Plug 'gabrielelana/vim-markdown'
-Plug 'b4b4r07/vim-hcl'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'prettier/vim-prettier'
+if !has('nvim')
+    " For nvim, rely on Treesitter.
+    Plug 'cespare/vim-toml'
+    Plug 'b4b4r07/vim-hcl'
+endif
 
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -68,6 +70,8 @@ if has('nvim')
     Plug 'smbl64/vim-black-macchiato'
     " Support highlight colors.
     Plug 'folke/lsp-colors.nvim'
+    " Use Treesitter.
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 else
     " vim-lsp and related plugins.
     Plug 'prabirshrestha/async.vim'

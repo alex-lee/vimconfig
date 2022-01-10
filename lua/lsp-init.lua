@@ -35,5 +35,8 @@ end
 -- Load configs for auto completion.
 require("lsp-autocomplete")
 
+-- Set up Treesitter support.
+require("treesitter")
+
 -- For debugging.
 -- vim.lsp.set_log_level('debug')
