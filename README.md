@@ -21,6 +21,18 @@ specified in `plugins.vim`.
 $ go install golang.org/x/tools/cmd/goimports@latest
 ```
 
+## Fonts
+
+The neovim configuration uses lualine with icons enabled. For this you should install a compatible
+font from [Nerd Fonts](https://www.nerdfonts.com/).
+
+For example:
+
+```
+$ unzip Downloads/Go-Mono.zip -d ~/.local/share/fonts
+$ fc-cache
+```
+
 ## Language support (neovim)
 
 Neovim's builtin language server client is used, together with [nvim-lspconfig].

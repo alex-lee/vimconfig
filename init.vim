@@ -28,7 +28,8 @@ endif
 set background=dark
 if exists('+termguicolors') && has('nvim')
     set termguicolors
-    colorscheme NeoSolarized
+    "colorscheme NeoSolarized
+    colorscheme kanagawa
 elseif exists('+termguicolors') && !has('nvim')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -37,9 +38,13 @@ elseif exists('+termguicolors') && !has('nvim')
 endif
 
 " Status line.
-let s:statusline_config = s:base_dir . '/statusline.vim'
-if filereadable(s:statusline_config)
-    exec 'source ' . s:statusline_config
+if has('nvim')
+    lua require('statusline')
+else
+    let s:statusline_config = s:base_dir . '/statusline.vim'
+    if filereadable(s:statusline_config)
+        exec 'source ' . s:statusline_config
+    endif
 endif
 
 " General behavior.
@@ -84,6 +89,7 @@ nnoremap <leader>E :Explore<CR>
 " Load LSP settings.
 if has('nvim')
     lua require('lsp-init')
+    lua require('treesitter')
 else
     let s:lsp_config = s:base_dir . '/lsp-vim.vim'
     if filereadable(s:lsp_config)

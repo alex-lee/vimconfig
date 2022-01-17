@@ -13,10 +13,13 @@ Plug 'christoomey/vim-tmux-navigator'
 " Appearance.
 if has('nvim')
     Plug 'iCyMind/NeoSolarized'
+    Plug 'rebelot/kanagawa.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'kyazdani42/nvim-web-devicons'
 else
     Plug 'lifepillar/vim-solarized8'
+    Plug 'itchyny/lightline.vim'
 endif
-Plug 'itchyny/lightline.vim'
 
 " General behavior.
 " Plug 'tpope/vim-unimpaired'
@@ -24,7 +27,7 @@ Plug 'itchyny/lightline.vim'
 " Development tools.
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'janko/vim-test'
+Plug 'vim-test/vim-test'
 
 " Search.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

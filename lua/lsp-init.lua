@@ -3,10 +3,13 @@
 -- Expects the following plugins:
 --   neovim/nvim-lspconfig
 --   hrsh7th/nvim-compe
+--   nvim-lualine/lualine.nvim
+--   kyazdani42/nvim-web-devicons
 --
 -- Recommends the following plugins:
 --   smbl64/vim-black-macchiato
 --   folke/lsp-colors.nvim
+
 local nvim_lsp = require("lspconfig")
 local on_attach = require("lsp-attach").on_attach
 
@@ -34,9 +37,6 @@ end
 
 -- Load configs for auto completion.
 require("lsp-autocomplete")
-
--- Set up Treesitter support.
-require("treesitter")
 
 -- For debugging.
 -- vim.lsp.set_log_level('debug')
